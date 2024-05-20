@@ -1,0 +1,19 @@
+meta {
+  name: Get file information
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://api.moonshot.cn/v1/files/{{file_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{MOONSHOT_API_KEY}}
+}
+
+vars:pre-request {
+  file_id: cp5fr9b5cfuldv2sr1q0
+}

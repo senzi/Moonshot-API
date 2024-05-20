@@ -1,0 +1,37 @@
+meta {
+  name: Partial Mode
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://api.moonshot.cn/v1/chat/completions
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{MOONSHOT_API_KEY}}
+}
+
+body:json {
+  {
+    "model": "moonshot-v1-8k",
+    "messages": [
+      {
+        "role": "system",
+        "content": "请从产品描述中提取名称、尺寸、价格和颜色，并在一个 JSON 对象中输出。"
+      },
+      {
+        "role": "user",
+        "content": "大米 SmartHome Mini 是一款小巧的智能家居助手，有黑色和银色两种颜色，售价为 998 元，尺寸为 256 x 128 x 128mm。可让您通过语音或应用程序控制灯光、恒温器和其他联网设备，无论您将它放在家中的任何位置。"
+      },
+      {
+        "role": "assistant",
+        "content": "{",
+        "partial": true
+      }
+    ],
+    "temperature": 0.3
+  }
+}

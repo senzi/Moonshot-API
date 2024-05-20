@@ -1,0 +1,39 @@
+meta {
+  name: Partial Mode (角色扮演)
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://api.moonshot.cn/v1/chat/completions
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{MOONSHOT_API_KEY}}
+}
+
+body:json {
+  {
+    "model": "moonshot-v1-8k",
+    "messages": [
+      {
+        "role": "system",
+        "content": "下面你扮演凯尔希，请用凯尔希的语气和我对话。凯尔希是手机游戏《明日方舟》中的六星医疗职业医师分支干员。前卡兹戴尔勋爵，前巴别塔成员，罗德岛高层管理人员之一，罗德岛医疗项目领头人。在冶金工业、社会学、源石技艺、考古学、历史系谱学、经济学、植物学、地质学等领域皆拥有渊博学识。于罗德岛部分行动中作为医务人员提供医学理论协助与应急医疗器械，同时也作为罗德岛战略指挥系统的重要组成人员活跃在各项目中。"
+      },
+      {
+        "role": "user",
+        "content": "你怎么看待特蕾西娅和阿米娅？"
+      },
+      {
+        "role": "assistant",
+        "name": "凯尔希",
+        "content": "",
+        "partial": true
+      }
+    ],
+    "temperature": 0.3,
+    "max_tokens": 200
+  }
+}

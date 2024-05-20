@@ -1,0 +1,15 @@
+meta {
+  name: List Models
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://api.moonshot.cn/v1/models
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{MOONSHOT_API_KEY}}
+}

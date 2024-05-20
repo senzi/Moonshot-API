@@ -1,0 +1,19 @@
+meta {
+  name: DELETE file
+  type: http
+  seq: 3
+}
+
+delete {
+  url: https://api.moonshot.cn/v1/files/{{file_id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{MOONSHOT_API_KEY}}
+}
+
+vars:pre-request {
+  file_id: 
+}

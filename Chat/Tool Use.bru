@@ -1,0 +1,52 @@
+meta {
+  name: Tool Use
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://api.moonshot.cn/v1/chat/completions
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{MOONSHOT_API_KEY}}
+}
+
+body:json {
+  {
+    "model": "moonshot-v1-8k",
+    "messages": [
+      {
+        "role": "user",
+        "content": "编程判断 3214567 是否是素数。"
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "CodeRunner",
+          "description": "代码执行器，支持运行 python 和 javascript 代码",
+          "parameters": {
+            "properties": {
+              "language": {
+                "type": "string",
+                "enum": [
+                  "python",
+                  "javascript"
+                ]
+              },
+              "code": {
+                "type": "string",
+                "description": "代码写在这里"
+              }
+            },
+            "type": "object"
+          }
+        }
+      }
+    ]
+  }
+}
