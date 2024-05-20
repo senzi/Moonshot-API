@@ -2,6 +2,20 @@
 ## Overview
 This repository contains a collection of API implementations for interacting with the Moonshot AI services. The APIs are organized into different folders for various functionalities such as Chat, File operations, and Others.
 
+# Introduction to Bruno
+
+**Bruno** is an open-source Integrated Development Environment (IDE) designed for exploring and testing APIs. It aims to revolutionize the status quo of existing API client tools like Postman with its innovative approach. Key features of Bruno include:
+
+- **Local Storage**: Bruno stores your API collections directly in your file system using a plain text markup language called Bru.
+- **Version Control Friendly**: It integrates seamlessly with Git or any version control system of your choice, facilitating collaboration and version management.
+- **Completely Offline**: Bruno is an offline-first tool that values user data privacy and has no plans for cloud synchronization.
+- **Multi-platform Support**: Available for Mac, Windows, and Linux, Bruno can run on a variety of operating systems.
+- **Community-Driven**: It has an active open-source community that continually iterates and improves the tool.
+
+Bruno offers a [free and open-source version](https://www.usebruno.com/downloads) as well as a [paid Golden Edition](https://www.usebruno.com/pricing) with additional features. Whether for personal use or team collaboration, Bruno is a powerful tool for managing API development and testing.
+
+For more information about Bruno, visit the [official website](https://www.usebruno.com) or its [GitHub repository](https://github.com/usebruno/bruno).
+
 ## Environment Setup
 To use the APIs, you need to set up an environment variable named `MOONSHOT_API_KEY`. This key is used for authentication and should be treated as sensitive information.
 
